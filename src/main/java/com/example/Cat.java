@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Cat {
 
-    Predator predator;
+    Predator predator; //объявили локальную переменную
 
     public Cat(Feline feline) {
         this.predator = feline;
