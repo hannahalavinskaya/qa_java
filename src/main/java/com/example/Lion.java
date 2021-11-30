@@ -6,7 +6,7 @@ public class Lion {
 
     boolean hasMane;
 
-    private Feline feline; //объявили локальную переменную, чтобы не создавать объект внутри другого объекта
+    private Feline feline; // объявили поле класса, чтобы не создавать объект внутри другого объекта
 
     public Lion(Feline feline, String sex) throws Exception { //создали конструктор с двумя параметрами
         this.feline = feline; // устанавливаем значение локальной переменной с переданными параметрами

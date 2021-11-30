@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 public class TestFeline {
 
     @Mock
-    Feline felinemock;
+    Feline felineMock;
 
     Feline feline;
 
@@ -27,7 +27,7 @@ public class TestFeline {
 
     @Test
     public void testEatMeat() throws Exception {
-        assertEquals("HaveMane", List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
+        assertEquals("EatMeat", List.of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
 
     @Test
@@ -42,8 +42,8 @@ public class TestFeline {
 
     @Test
     public void testGetKittensCalled() { // проверка, что метод вызывается с указанными параметрами
-        felinemock.getKittens();
-        Mockito.verify(felinemock).getKittens();
+        felineMock.getKittens();
+        Mockito.verify(felineMock).getKittens();
     }
 
 }

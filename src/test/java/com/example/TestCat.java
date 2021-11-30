@@ -7,22 +7,18 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.List;
 
 import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class TestCat {
-
-    Feline feline;
-    Cat cat;
-
     @Mock
-    Cat catmock;
+    Feline feline;
+
+    Cat cat;
 
     @Before
     public void setUp() throws Exception {
-        feline = new Feline();
         cat = new Cat(feline);
     }
 
@@ -32,13 +28,9 @@ public class TestCat {
     }
 
     @Test
-    public void testGetFoodCalled() throws Exception {
-        catmock.getFood();
-        Mockito.verify(catmock).getFood();
+    public void testGetFood() throws Exception { // проверка на то, что при вызове метода cat.getFood вызывается feline.eatMeat
+        cat.getFood();
+        Mockito.verify(feline).eatMeat();
     }
 
-    @Test
-    public void testGetFood() throws Exception {  // проверка на то, что метод возвращает соответствующий хищнику список еды
-        assertEquals("inappropriate food list for predator", List.of("Животные", "Птицы", "Рыба"), cat.getFood());
-    }
 }
