@@ -6,27 +6,28 @@ public class Lion {
 
     boolean hasMane;
 
-    public Lion(String sex) throws Exception {
+    private Feline feline; // объявили поле класса, чтобы не создавать объект внутри другого объекта
+
+    public Lion(Feline feline, String sex) throws Exception { //создали конструктор с двумя параметрами
+        this.feline = feline; // устанавливаем значение локальной переменной с переданными параметрами
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
     }
 
-    Feline feline = new Feline();
-
-    public int getKittens() {
+    public int getKittens() { //методы объекта, сколько котят
         return feline.getKittens();
     }
 
-    public boolean doesHaveMane() {
+    public boolean doesHaveMane() { //метод объекта, есть ли грива
         return hasMane;
     }
 
-    public List<String> getFood() throws Exception {
+    public List<String> getFood() throws Exception { // вызывается метод класса хищник, который возвращает список еды класса Animal
         return feline.getFood("Хищник");
     }
 }
